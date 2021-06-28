@@ -1,0 +1,241 @@
+{
+  "components": {
+    "schemas": {}
+  },
+  "info": {
+    "title": "Library",
+    "version": "1.0.0"
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/users": {
+      "get": {
+        "operationId": "UserController.getMe",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get me",
+        "tags": [
+          "User"
+        ]
+      },
+      "post": {
+        "operationId": "UserController.create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "description": "User",
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Create",
+        "tags": [
+          "User"
+        ]
+      },
+      "patch": {
+        "operationId": "UserController.update",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "description": "User",
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Update",
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/users/login": {
+      "post": {
+        "operationId": "UserController.login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {}
+            }
+          },
+          "description": "",
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Login",
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/users/logout": {
+      "post": {
+        "operationId": "UserController.logOut",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "description": "User",
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Log out",
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/users/avatar": {
+      "post": {
+        "operationId": "UserController.setAvatar",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Set avatar",
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/users/waiting": {
+      "get": {
+        "operationId": "UserController.getMyBookWaiting",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get my book waiting",
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/users/orders": {
+      "get": {
+        "operationId": "UserController.getMyBookOrders",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get my book orders",
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/books": {
+      "post": {
+        "operationId": "BookController.create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Book"
+              }
+            }
+          },
+          "description": "Book",
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Create",
+        "tags": [
+          "Book"
+        ]
+      }
+    },
+    "/books/{id}": {
+      "post": {
+        "operationId": "BookController.order",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Order",
+        "tags": [
+          "Book"
+        ]
+      }
+    }
+  }
+}
